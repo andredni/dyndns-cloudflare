@@ -6,7 +6,7 @@ WORKDIR /src
 COPY ./go.mod ./go.sum ./
 RUN go mod download
 
-COPY ./ ./
+COPY ./pkg/ ./
 
 RUN go get -d -v
 RUN CGO_ENABLED=0 go build -o /go/bin/dyndns-cloudflare
